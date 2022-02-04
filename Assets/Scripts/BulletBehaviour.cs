@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    public float onscreenDelay = 5f;
+    public float onscreenDelay = 4f;
 
     void Start()
     {
