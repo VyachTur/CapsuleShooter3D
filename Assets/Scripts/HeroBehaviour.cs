@@ -6,8 +6,13 @@ public class HeroBehaviour : MonoBehaviour
 
     public float moveSpeed = 10f;
     public float rotateSpeed = 90f;
-
     public float jumpVelocity = 5f;
+    public LayerMask groundLayer;
+    public GameObject bullet;
+    public float bulletSpeed = 100f;
+
+    public delegate void JumpingEvent();
+    public event JumpingEvent playerJump;
 
     private bool _doJump = false;
     private bool _doFire = false;
@@ -15,21 +20,10 @@ public class HeroBehaviour : MonoBehaviour
 
     private float _vInput;
     private float _hInput;
-
     private Rigidbody _rb;
-
     private float distanceToGround = 0.1f;
-
-    public LayerMask groundLayer;
-
     private BoxCollider _col;
 
-    public GameObject bullet;
-    public float bulletSpeed = 100f;
-
-    public delegate void JumpingEvent();
-    
-    public event JumpingEvent playerJump;
 
     private void Start()
     {

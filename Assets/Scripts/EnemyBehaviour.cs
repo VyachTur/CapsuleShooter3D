@@ -11,10 +11,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     private int locationIndex = 0;
     private NavMeshAgent agent;
+    private bool isPlayerDetected = false;
 
     private System.Random rand;
 
-    private bool isPlayerDetected = false;
 
     [SerializeField] private int _lives = 10;
 
