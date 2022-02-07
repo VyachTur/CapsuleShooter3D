@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameBehaviour : MonoBehaviour, IManager
+public class GameBehaviour : MonoBehaviour, IManager, IInterface
 {
     public const int maxItems = 6;
     private string labelText = $"Collect all {maxItems} items and win your freedom!";
@@ -29,6 +29,8 @@ public class GameBehaviour : MonoBehaviour, IManager
     void Start()
     {
         Initialize();
+
+        //IInterface.PrintLog("Message From Interface");
     }
 
     public void Initialize()
@@ -37,6 +39,8 @@ public class GameBehaviour : MonoBehaviour, IManager
         Debug.Log(_state);
 
         HeroBehaviour playerBehavior = GameObject.Find("Hero").GetComponent<HeroBehaviour>();
+
+        
 
         playerBehavior.playerJump += HandlePlayerJump;
     }
